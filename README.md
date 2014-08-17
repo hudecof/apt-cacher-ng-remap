@@ -1,4 +1,4 @@
-# apt-cacher-ng repmap
+# apt-cacher-ng remap
 
 ## Overview
 For more information read the post on [my blog page](http://blog.hudecof.net/posts/2014/08/15/apt-cacher-ng-and-remap.html).
