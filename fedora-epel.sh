@@ -11,7 +11,7 @@ REPO="epel-5 epel-6 epel-7"
 
 for R in ${REPO}; do
 	for A in ${ARCH}; do
-		wget -q -O - "${URL_BASE}/metalink?repo=${R}&arch=${A}" >> ${INFILE}
+		wget --no-check-certificate -q -O - "${URL_BASE}/metalink?repo=${R}&arch=${A}" >> ${INFILE}
 	done
 done
 

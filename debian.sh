@@ -22,7 +22,7 @@ create_mirror_list() {
 	done
 }
 
-wget -q -O "${INFILE}" "${URL}"
+wget --no-check-certificate -q -O "${INFILE}" "${URL}"
 create_mirror_list "Packages over" list.ng.debian
 create_mirror_list "Security updates over" list.debian-security
 create_mirror_list "backports-over" list.debian-backports
