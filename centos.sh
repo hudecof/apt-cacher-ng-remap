@@ -2,7 +2,13 @@
 
 URL="http://www.centos.org/download/full-mirrorlist.csv"
 INFILE=$(mktemp -t mirror-list-centos.XXXXXX)
+OUTFILE="list.centos"
 
 wget --no-check-certificate -q -O "${INFILE}" "${URL}"
-cat ${INFILE} | awk -F '","' '{print $5,$6,$7}' | sed -e 's/"//g' -e 's/ /\n/g' | sort -u | grep -v "^$"
+
+tail -n+2 full-mirrorlist.csv | awk -F '","' '{print $5}' > ${OUTFILE} 
+tail -n+2 full-mirrorlist.csv | awk -F '","' '{print $6}' >> ${OUTFILE}
+
+sed -i '' '/^\s*$/d' ${OUTFILE}
+ 
 rm -f ${INFILE}
