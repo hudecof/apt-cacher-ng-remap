@@ -6,8 +6,8 @@ OUTFILE="list.centos"
 
 wget --no-check-certificate -q -O "${INFILE}" "${URL}"
 
-tail -n+2 full-mirrorlist.csv | awk -F '","' '{print $5}' > ${OUTFILE} 
-tail -n+2 full-mirrorlist.csv | awk -F '","' '{print $6}' >> ${OUTFILE}
+tail -n+2 "${INFILE}" | awk -F '","' '{print $5}' > ${OUTFILE} 
+tail -n+2 "${INFILE}" | awk -F '","' '{print $6}' >> ${OUTFILE}
 
 sed -i '' '/^\s*$/d' ${OUTFILE}
  
