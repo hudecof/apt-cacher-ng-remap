@@ -9,6 +9,6 @@ wget --no-check-certificate -q -O "${INFILE}" "${URL}"
 tail -n+2 "${INFILE}" | awk -F '","' '{print $5}' > ${OUTFILE} 
 tail -n+2 "${INFILE}" | awk -F '","' '{print $6}' >> ${OUTFILE}
 
-sed -i '' '/^\s*$/d' ${OUTFILE}
+sed -i'' '/^\s*$/d' ${OUTFILE}
  
 rm -f ${INFILE}
